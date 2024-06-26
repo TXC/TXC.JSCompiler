@@ -10,7 +10,7 @@
     <Description>JS Compiler Library</Description>
     <PackageDescription>JS Compiler Library</PackageDescription>
     <PackageTags>js;blazor;</PackageTags>
-    <RepositoryUrl>https://github.com/TXC/JSCompiler</RepositoryUrl>
+    <RepositoryUrl>https://github.com/TXC/TXC.JSCompiler</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Title>TXC.JSCompiler</Title>
     <PackageReadmeFile>README.md</PackageReadmeFile>
