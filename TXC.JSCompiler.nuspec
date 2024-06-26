@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>JSCompiler</id>
+    <version>1.0.0</version>
+    <title>JSCompiler</title>
+    <summary>Auto build task to minify JavaScript files</summary>
+    <authors>Jonas Marklén</authors>
+    <owners>Jonas Marklén</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Minify JavaScript files on project build.</description>
+    <tags>Minify Build JavaScript</tags>
+    <projectUrl>https://github.com/TXC/JSCompiler</projectUrl>
+    <repository type="git" url="https://github.com/TXC/JSCompiler.git"></repository>
+    <license type="expression">MIT</license>
+    <icon>jsmin.png</icon>
+  </metadata>
+</package>

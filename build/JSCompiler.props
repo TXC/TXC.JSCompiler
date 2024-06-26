@@ -1,0 +1,18 @@
+<Project>
+
+  <PropertyGroup>
+    <JSCompilerTasksAssembly Condition=" '$(JSCompilerTasksAssembly)' == '' ">$(MSBuildThisFileDirectory)..\lib\netstandard2.0\TXC.JSCompiler.dll</JSCompilerTasksAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <JSCompilerSourceDirectory Condition="'$(JSCompilerSourceDirectory)' == ''">$(JSCompilerSourceDirectory)</JSCompilerSourceDirectory>
+    <JSCompilerSourceDirectory Condition="'$(JSCompilerSourceDirectory)' == ''">$(ProjectDir)Scripts</JSCompilerSourceDirectory>
+
+    <JSCompilerDestinationFile Condition="'$(JSCompilerDestinationFile)' == ''">$(JSCompilerDestinationFile)</JSCompilerDestinationFile>
+    <JSCompilerDestinationFile Condition="'$(JSCompilerDestinationFile)' == ''">$(ProjectDir)wwwroot/App.min.js</JSCompilerDestinationFile>
+
+    <JSCompilerConfiguration Condition="'$(JSCompilerConfiguration)' == ''">$(Configuration)</JSCompilerConfiguration>
+    <JSCompilerConfiguration Condition="'$(JSCompilerConfiguration)' == ''">Debug</JSCompilerConfiguration>
+  </PropertyGroup>
+
+</Project>

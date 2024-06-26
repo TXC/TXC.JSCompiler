@@ -1,0 +1,25 @@
+<Project>
+  <ItemGroup>
+    <UpToDateCheckInput Include="**/*.js" />
+  </ItemGroup>
+
+  <UsingTask TaskName="TXC.JSCompiler.CompileJS"
+             AssemblyFile="$(JSCompilerTasksAssembly)" />
+
+  <Target Name="Compile JS" BeforeTargets="Build;ResolveScopedCssInputs;BundleMinify;ResolveProjectStaticWebAssets" Condition="'$(DesignTimeBuild)' != 'true'">
+	  <Message Text="Hello World" Importance="High"/>
+    <CompileJS SourceDirectory="${JSCompilerSourceDirectory}"
+               DestinationFile="@{JSCompilerDestinationFile}">
+      <Output TaskParameter="GeneratedFile" ItemName="CompiledJsFile" />
+    </CompileJS>
+
+    <ItemGroup>
+      <None Remove="@(CompiledJsFile)" />
+
+      <!-- Fix to only include files that were newly generated as to not have duplicate Content items. -->
+      <_NewCompiledJsFile Include="@(CompiledJsFile)" Exclude="@(Content)" />
+      <Content Include="@(_NewCompiledJsFile)" />
+    </ItemGroup>
+  </Target>
+
+</Project>

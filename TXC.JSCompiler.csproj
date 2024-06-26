@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <PackageId>TXC.JSCompiler</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Jonas Marklén</Authors>
+    <Description>JS Compiler Library</Description>
+    <PackageDescription>JS Compiler Library</PackageDescription>
+    <PackageTags>js;blazor;</PackageTags>
+    <RepositoryUrl>https://github.com/TXC/JSCompiler</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Title>TXC.JSCompiler</Title>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <LangVersion>latest</LangVersion>
+    <NuspecFile>TXC.JSCompiler.nuspec</NuspecFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Build.Framework" Version="16.4.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="16.4.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="build/*" Pack="true" PackagePath="build" />
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
