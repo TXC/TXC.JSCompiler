@@ -1,0 +1,137 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "prConcurrentLimit": 10,
+  "prHourlyLimit": 2,
+  "minimumReleaseAge": "3 days",
+  "internalChecksFilter": "strict",
+  "semanticCommits": "enabled",
+  "labels": [
+    "renovate",
+    "dependencies"
+  ],
+  "osvVulnerabilityAlerts": true,
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "description": "Security fixes open a PR immediately, ignoring the release-age hold and PR rate limits.",
+    "labels": [
+      "renovate",
+      "dependencies",
+      "security"
+    ],
+    "groupName": "security",
+    "automerge": true,
+    "automergeType": "pr",
+    "automergeSchedule": [
+      "* 0-3 * * *"
+    ]
+  },
+  "lockFileMaintenance": {
+    "description": "Refresh transitive deps in the lockfile once a week.",
+    "enabled": true,
+    "schedule": [
+      "* 0-3 * * 1"
+    ]
+  },
+  "packageRules": [
+    {
+      "description": "Other: Collapse non-major dependency updates into one rolling PR",
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "groupName": "Other dependencies",
+      "groupSlug": "other-dependencies"
+    },
+    {
+      "description": "JavaScript: Collapse non-major dependency updates into one rolling PR.",
+      "matchCategories": ["js"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "postUpdateOptions": [
+        "pnpmDedupe",
+        "npmDedupe",
+        "yarnDedupeFewer"
+      ],
+      "groupName": "JavaScript dependencies",
+      "groupSlug": "js-dependencies"
+    },
+    {
+      "description": "PHP: Collapse non-major dependency updates into one rolling PR.",
+      "matchCategories": ["php"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "groupName": "PHP dependencies",
+      "groupSlug": "php-dependencies"
+    },
+    {
+      "description": "CSharp: Collapse non-major dependency updates into one rolling PR.",
+      "matchCategories": ["dotnet"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "groupName": "CSharp dependencies",
+      "groupSlug": "csharp-dependencies"
+    },
+    {
+      "description": "Python: Collapse non-major dependency updates into one rolling PR.",
+      "matchCategories": ["python"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "groupName": "Python dependencies",
+      "groupSlug": "python-dependencies"
+    },
+    {
+      "description": "C/C++: Collapse non-major dependency updates into one rolling PR.",
+      "matchCategories": ["c"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "groupName": "C/C++ dependencies",
+      "groupSlug": "c-dependencies"
+    },
+    {
+      "description": "Go: Collapse non-major dependency updates into one rolling PR.",
+      "matchCategories": ["golang"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "groupName": "Go dependencies",
+      "groupSlug": "go-dependencies"
+    },
+    {
+      "description": "Collapse all GitHub Actions bumps into a single PR and pin them to commit SHAs.",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "groupName": "GitHub Actions",
+      "groupSlug": "github-actions",
+      "pinDigests": true
+    }
+  ]
+}
